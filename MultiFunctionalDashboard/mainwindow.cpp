@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(httpManager, SIGNAL(imageReady(QPixmap *)),
             this, SLOT(processImage(QPixmap *)));
 
+    on_imageDisplay_clicked();
+
 }
 
 MainWindow::~MainWindow()
@@ -44,5 +46,7 @@ void MainWindow::processImage(QPixmap *image)
 
 void MainWindow::on_imageDisplay_clicked()
 {
-    httpManager->sendImageRequest();
+    QString zip = ui->zipCodeEdit->text();
+    qDebug() << zip;
+    httpManager->sendImageRequest(zip);
 }
