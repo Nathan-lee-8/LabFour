@@ -4,7 +4,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
-      timer(new QTimer)
+      timer(new QTimer),
+      httpManager(new HTTPManager)
 {
     ui->setupUi(this);
 
@@ -12,6 +13,10 @@ MainWindow::MainWindow(QWidget *parent)
             this, SLOT(setCurrentTime()));
     setCurrentTime();
     timer->start(1000);
+
+    connect(httpManager, SIGNAL(imageReady(QPixmap *)),
+            this, SLOT(processImage(QPixmap *)));
+
 }
 
 MainWindow::~MainWindow()
@@ -31,3 +36,13 @@ void MainWindow::setCurrentTime()
     ui->secondValue->display(second);
 }
 
+void MainWindow::processImage(QPixmap *image)
+{
+    ui->imageLabel->setPixmap(*image);
+}
+
+
+void MainWindow::on_imageDisplay_clicked()
+{
+    httpManager->sendImageRequest();
+}
