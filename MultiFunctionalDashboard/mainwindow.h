@@ -23,9 +23,7 @@ private slots:
     void processImage(QPixmap *);
     void processWeatherJson(QJsonObject *json);
 
-    void on_imageDisplay_clicked();
-
-    void on_weatherDisplay_clicked();
+    void on_updateWeatherLocation_clicked();
 
 private:
     Ui::MainWindow *ui;

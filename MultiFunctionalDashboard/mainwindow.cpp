@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(httpManager, SIGNAL(imageReady(QPixmap *)),
             this, SLOT(processImage(QPixmap *)));
 
-    on_imageDisplay_clicked();
+    on_updateWeatherLocation_clicked();
 
     connect(httpManager,SIGNAL(weatherJsonReady(QJsonObject *)),
             this, SLOT(processWeatherJson(QJsonObject *)));
@@ -57,17 +57,10 @@ void MainWindow::processWeatherJson(QJsonObject *json)
     ui->weatherLabel->setText("Current Weather: "+ weather + " Temperature: " + QString::number(temp));
 }
 
-
-void MainWindow::on_imageDisplay_clicked()
+void MainWindow::on_updateWeatherLocation_clicked()
 {
     QString zip = ui->zipCodeEdit->text();
     qDebug() << zip;
     httpManager->sendImageRequest(zip);
-}
-
-void MainWindow::on_weatherDisplay_clicked()
-{
-    QString zip = ui->zipCodeEdit->text();
-    qDebug()<< zip;
     httpManager->sendWeatherRequest(zip);
 }

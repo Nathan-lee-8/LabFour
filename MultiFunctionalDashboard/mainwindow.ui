@@ -92,7 +92,7 @@
      <number>22</number>
     </property>
    </widget>
-   <widget class="QPushButton" name="imageDisplay">
+   <widget class="QPushButton" name="updateWeatherLocation">
     <property name="geometry">
      <rect>
       <x>492</x>
@@ -108,7 +108,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Traffic Image Display</string>
+     <string>Update</string>
     </property>
    </widget>
    <widget class="QLabel" name="imageLabel">
@@ -149,31 +149,12 @@
      <string>98105</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="weatherDisplay">
-    <property name="geometry">
-     <rect>
-      <x>492</x>
-      <y>45</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Lato</family>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Weather Display</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="weatherLabel">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>130</y>
-      <width>321</width>
+      <width>431</width>
       <height>51</height>
      </rect>
     </property>
@@ -226,7 +207,7 @@
      <x>0</x>
      <y>0</y>
      <width>871</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
