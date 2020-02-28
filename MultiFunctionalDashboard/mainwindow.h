@@ -21,8 +21,11 @@ public:
 private slots:
     void setCurrentTime();
     void processImage(QPixmap *);
+    void processWeatherJson(QJsonObject *json);
 
     void on_imageDisplay_clicked();
+
+    void on_weatherDisplay_clicked();
 
 private:
     Ui::MainWindow *ui;
