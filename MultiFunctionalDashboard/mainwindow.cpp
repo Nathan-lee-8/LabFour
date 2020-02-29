@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     setCurrentTime();
     timer->start(1000);
 
+    loadImage();
+
     connect(httpManager, SIGNAL(imageReady(QPixmap *)),
             this, SLOT(processImage(QPixmap *)));
 
@@ -31,6 +33,56 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::loadImage(){
+    QString cowboyFilename = ":/images/cowboy.jpeg";
+    if(imageCowboy.load(cowboyFilename)){
+        qDebug() << "Image Loaded";
+        imageCowboy = imageCowboy.scaled(ui->slideshow_images->size(), Qt::KeepAspectRatioByExpanding);
+    }
+    ui->slideshow_images->setPixmap(imageCowboy);
+    QTimer::singleShot(10000,this,SLOT(loadKakashi()));
+}
+
+void MainWindow::loadKakashi(){
+    QString kakashiFilename = ":/images/hypeKakashi.webp";
+    if(imageKakashi.load(kakashiFilename)){
+        qDebug() << "Image Loaded";
+        imageKakashi = imageKakashi.scaled(ui->slideshow_images->size(), Qt::KeepAspectRatioByExpanding);
+    }
+    ui->slideshow_images->setPixmap(imageKakashi);
+    QTimer::singleShot(10000,this,SLOT(loadKillua()));
+}
+
+void MainWindow::loadKillua(){
+    QString killuaFilename = ":/images/killuaScreen.jpeg";
+    if(imageKillua.load(killuaFilename)){
+        qDebug() << "Image Loaded";
+        imageKillua = imageKillua.scaled(ui->slideshow_images->size(), Qt::KeepAspectRatioByExpanding);
+    }
+    ui->slideshow_images->setPixmap(imageKillua);
+    QTimer::singleShot(10000,this,SLOT(loadSteins()));
+}
+
+void MainWindow::loadSteins(){
+    QString steinsFilename = ":/images/SteinsGate.jpg";
+    if(imageSteins.load(steinsFilename)){
+        qDebug() << "Image Loaded";
+        imageSteins = imageSteins.scaled(ui->slideshow_images->size(), Qt::KeepAspectRatioByExpanding);
+    }
+    ui->slideshow_images->setPixmap(imageSteins);
+    QTimer::singleShot(10000,this,SLOT(loadLuffy()));
+}
+
+void MainWindow::loadLuffy(){
+    QString luffyFilename = ":/images/luffy.jpeg";
+    if(imageLuffy.load(luffyFilename)){
+        qDebug() << "Image Loaded";
+        imageLuffy = imageLuffy.scaled(ui->slideshow_images->size(), Qt::KeepAspectRatioByExpanding);
+    }
+    ui->slideshow_images->setPixmap(imageLuffy);
+    QTimer::singleShot(10000,this,SLOT(loadImage()));
+}
+
 void MainWindow::setCurrentTime()
 {
     QTime time = QTime::currentTime();
@@ -38,9 +90,16 @@ void MainWindow::setCurrentTime()
     QString minute = time.toString("mm");
     QString second = time.toString("ss");
 
+    int worldHour = (time.hour() + 3) % 23;
+    QString hourString = QString::number(worldHour);
+
     ui->hourValue->display(hour);
     ui->minuteValue->display(minute);
     ui->secondValue->display(second);
+
+    ui->worldHourValue->display(hourString);
+    ui->worldMinuteValue->display(minute);
+    ui->worldSecondValue->display(second);
 }
 
 void MainWindow::processImage(QPixmap *image)

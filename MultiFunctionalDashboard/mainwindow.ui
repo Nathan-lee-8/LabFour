@@ -190,14 +190,89 @@
    <widget class="QLabel" name="slideshow_images">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>280</y>
-      <width>321</width>
-      <height>211</height>
+      <x>470</x>
+      <y>230</y>
+      <width>351</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="text">
      <string>SLIDESHOW</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="worldHourValue">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>520</y>
+      <width>131</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="digitCount">
+     <number>2</number>
+    </property>
+    <property name="value" stdset="0">
+     <double>22.000000000000000</double>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>22</number>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="worldMinuteValue">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>520</y>
+      <width>131</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="digitCount">
+     <number>2</number>
+    </property>
+    <property name="value" stdset="0">
+     <double>22.000000000000000</double>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>22</number>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="worldSecondValue">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>520</y>
+      <width>141</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lato</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="digitCount">
+     <number>2</number>
+    </property>
+    <property name="value" stdset="0">
+     <double>22.000000000000000</double>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>22</number>
     </property>
    </widget>
   </widget>
@@ -207,7 +282,7 @@
      <x>0</x>
      <y>0</y>
      <width>871</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

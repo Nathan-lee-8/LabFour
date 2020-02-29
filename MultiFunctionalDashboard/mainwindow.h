@@ -25,10 +25,25 @@ private slots:
 
     void on_updateWeatherLocation_clicked();
 
+    void loadImage();
+
+    void loadKakashi();
+
+    void loadKillua();
+
+    void loadSteins();
+
+    void loadLuffy();
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
     HTTPManager *httpManager;
+    QPixmap imageCowboy;
+    QPixmap imageKakashi;
+    QPixmap imageKillua;
+    QPixmap imageSteins;
+    QPixmap imageLuffy;
 
 };
 #endif // MAINWINDOW_H
