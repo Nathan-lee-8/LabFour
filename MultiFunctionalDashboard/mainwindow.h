@@ -35,13 +35,6 @@ private slots:
 
     void loadLuffy();
 
-    /*void loadClear();
-    void loadClouds();
-    void loadRain();
-    void loadSnow();
-    void loadDrizzle();
-    void loadThunder();*/
-
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
