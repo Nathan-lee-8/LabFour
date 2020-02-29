@@ -112,8 +112,44 @@ void MainWindow::processWeatherJson(QJsonObject *json)
     qDebug() << json->value("weather");
     QString weather = json->value("weather").toArray()[0].toObject()["main"].toString();
     double temp = json->value("main").toObject()["temp"].toDouble();
-
-    ui->weatherLabel->setText("Current Weather: "+ weather + " Temperature: " + QString::number(temp));
+    double humid = json->value("main").toObject()["humidity"].toDouble();
+    ui->weatherLabel->setText("Current Weather: "+ weather + " " + QString::number(temp) +"°F Humidity: " + QString::number(humid));
+    if (weather=="Clouds"){
+        if(imageClouds.load(":/images/cloud.png")){
+            imageClouds = imageClouds.scaled(ui->weatherImages->size(), Qt::KeepAspectRatioByExpanding);
+        }
+        ui->weatherImages->setPixmap(imageClouds);
+    }
+    else if (weather=="Rain"){
+        if(imageRain.load(":/images/rain.png")){
+            imageRain = imageRain.scaled(ui->weatherImages->size(), Qt::KeepAspectRatioByExpanding);
+        }
+        ui->weatherImages->setPixmap(imageRain);
+    }
+    else if (weather=="Snow"){
+        if(imageSnow.load(":/images/snow.png")){
+            imageSnow = imageSnow.scaled(ui->weatherImages->size(), Qt::KeepAspectRatioByExpanding);
+        }
+        ui->weatherImages->setPixmap(imageSnow);
+    }
+    else if (weather=="Drizzle"){
+        if(imageDrizzle.load(":/images/drizzle.png")){
+            imageDrizzle = imageDrizzle.scaled(ui->weatherImages->size(), Qt::KeepAspectRatioByExpanding);
+        }
+        ui->weatherImages->setPixmap(imageDrizzle);
+    }
+    else if (weather=="Thunderstorm"){
+        if(imageThunder.load(":/images/thunderstorm.png")){
+            imageThunder = imageThunder.scaled(ui->weatherImages->size(), Qt::KeepAspectRatioByExpanding);
+        }
+        ui->weatherImages->setPixmap(imageThunder);
+    }
+    else {
+        if(imageClear.load(":/images/sun.png")){
+            imageClear = imageClear.scaled(ui->weatherImages->size(), Qt::KeepAspectRatioByExpanding);
+        }
+        ui->weatherImages->setPixmap(imageClear);
+    }
 }
 
 void MainWindow::on_updateWeatherLocation_clicked()

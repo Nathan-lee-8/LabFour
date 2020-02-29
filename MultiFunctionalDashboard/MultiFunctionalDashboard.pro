@@ -34,3 +34,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     images.qrc
+
+DISTFILES += \
+    ../images/snow.png \
+    ../images/sun.png \
+    ../images/thunderstorm.png

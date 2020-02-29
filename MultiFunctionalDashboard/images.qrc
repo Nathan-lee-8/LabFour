@@ -5,5 +5,11 @@
         <file>../images/killuaScreen.jpeg</file>
         <file>../images/luffy.jpeg</file>
         <file>../images/SteinsGate.jpg</file>
+        <file>../images/cloud.png</file>
+        <file>../images/drizzle.png</file>
+        <file>../images/rain.png</file>
+        <file>../images/snow.png</file>
+        <file>../images/sun.png</file>
+        <file>../images/thunderstorm.png</file>
     </qresource>
 </RCC>

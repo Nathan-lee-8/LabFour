@@ -35,6 +35,13 @@ private slots:
 
     void loadLuffy();
 
+    /*void loadClear();
+    void loadClouds();
+    void loadRain();
+    void loadSnow();
+    void loadDrizzle();
+    void loadThunder();*/
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
@@ -44,6 +51,12 @@ private:
     QPixmap imageKillua;
     QPixmap imageSteins;
     QPixmap imageLuffy;
+    QPixmap imageClear;
+    QPixmap imageClouds;
+    QPixmap imageRain;
+    QPixmap imageSnow;
+    QPixmap imageDrizzle;
+    QPixmap imageThunder;
 
 };
 #endif // MAINWINDOW_H
